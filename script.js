@@ -10,7 +10,8 @@ function getComputerChoice () {
     }
 }
 
-function playRPS (playerSelection, computerSelection) {
+function playRound (playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
         return 'Draw';
     }
@@ -26,5 +27,12 @@ function playRPS (playerSelection, computerSelection) {
     }
     else {
         return 'Error';
+    }
+}
+
+function game () {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Do you choose Rock, Paper or Scissors?");
+        alert(playRound (playerSelection, getComputerChoice()));
     }
 }
